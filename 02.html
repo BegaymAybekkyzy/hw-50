@@ -14,51 +14,63 @@
 <script type="text/babel">
     const app = document.getElementById('app');
 
-    const Header = ({logo, logoDescription}) => {
-        return (
-            <div>
-                <a href="#" className="logo">
-                    <img src={logo} alt={logoDescription}/>
-                </a>
-            </div>
-        );
-    };
-
-    const Content = ({picture, pictureDescription, cardName}) => {
-        return (
-            <div className="cart">
-                <div className="img">
-                    <img src={picture} alt={pictureDescription}/>
+    class Header extends React.Component {
+        render() {
+            const { logo, logoDescription } = this.props;
+            return (
+                <div>
+                    <a href="#" className="logo">
+                        <img src={logo} alt={logoDescription} />
+                    </a>
                 </div>
-                <div className="cartInfo">
-                    <h5 className="cardTitle">{cardName}</h5>
-                    <a href="#" className="linkArrow">Смотреть</a>
+            );
+        }
+    }
+
+    class Content extends React.Component {
+        render() {
+            const {picture, pictureDescription, cardName} = this.props;
+            return (
+                <div className="cart">
+                    <div className="img">
+                        <img src={picture} alt={pictureDescription}/>
+                    </div>
+                    <div className="cartInfo">
+                        <h5 className="cardTitle">{cardName}</h5>
+                        <a href="#" className="linkArrow">Смотреть</a>
+                    </div>
                 </div>
-            </div>
-        );
-    };
+            );
+        }
+    }
 
-    const Navigation = ({navNameClass, listNameClass, title, listItem1, listItem2, listItem3, listItem4}) => {
-        return (
-            <nav className={navNameClass}>
-                <h3>{title}</h3>
-                <ul className={listNameClass}>
-                    <li><a href="#">{listItem1}</a></li>
-                    <li><a href="#">{listItem2}</a></li>
-                    <li><a href="#">{listItem3}</a></li>
-                    <li><a href="#">{listItem4}</a></li>
-                </ul>
-            </nav>
-        );
-    };
+    class Navigation extends React.Component {
+        render() {
+            const {navNameClass, listNameClass, title, listItem1, listItem2, listItem3, listItem4} = this.props;
+            return (
+                <nav className={navNameClass}>
+                    <h3>{title}</h3>
+                    <ul className={listNameClass}>
+                        <li><a href="#">{listItem1}</a></li>
+                        <li><a href="#">{listItem2}</a></li>
+                        <li><a href="#">{listItem3}</a></li>
+                        <li><a href="#">{listItem4}</a></li>
+                    </ul>
+                </nav>
+            );
+        }
+    }
 
-    const Footer = ({address, addressLink}) => {
-        return (
-            <div className="address container">
-                <a href={addressLink}>{address}</a>
-            </div>
-        );
-    };
+    class Footer extends React.Component {
+        render() {
+            const {address, addressLink} = this.props;
+            return (
+                <div className="address container">
+                    <a href={addressLink}>{address}</a>
+                </div>
+            );
+        }
+    }
 
     const pageBody = (
         <div>
