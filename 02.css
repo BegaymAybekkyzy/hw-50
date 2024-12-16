@@ -53,7 +53,7 @@ body {
 .list {
     list-style: none;
     padding: 0;
-    margin: 0 0 90px 0;
+    margin: 0 0 50px 0;
     border: 1px solid #e7e7e7;
     border-radius: 6px;
     background: #fff;
@@ -73,4 +73,64 @@ body {
     font-size: 16px;
     line-height: 150%;
     color: #292929;
+}
+
+.teaCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 15px;
+}
+
+.cart {
+    display: grid;
+}
+
+.img{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.cartInfo {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 52.6%, rgba(0, 0, 0, 0.72) 100%);
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: grid;
+    align-content: end;
+    justify-content: start;
+    padding: 10px 14px;
+}
+
+.cardTitle {
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    margin: 0;
+}
+
+.linkArrow {
+    color: #fd9339;
+    text-decoration: none;
+}
+
+.footer {
+    margin-top: 60px;
+    background: #fff;
+    padding: 38px 0;
+}
+
+.address {
+    display: flex;
+    justify-content: center;
+}
+
+.address a {
+    text-decoration: none;
+   color: #292929;
 }

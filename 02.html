@@ -52,28 +52,56 @@
         );
     };
 
+    const Footer = ({address, addressLink}) => {
+        return (
+            <div className="address container">
+                <a href={addressLink}>{address}</a>
+            </div>
+        );
+    };
+
     const pageBody = (
         <div>
             <header className="header ">
-                <div className="container">
+            <div className="container">
                     <div className="headerContainer">
                         <Header logo="https://v.od.ua/uploads/92/logo.png" logoDescription="logo"/>
                         <Navigation navNameClass="nav-header" listItem1="Рецепты" listItem2="Доставка и оплата"
                                     listItem3="Отзывы" listItem4="Контакты"></Navigation>
                     </div>
                 </div>
-
             </header>
+
             <div className="container">
                 <aside className="sidebare">
-                    <Navigation navNameClass="articles" listNameClass="list" title="Содержание статьи" listItem1="Какие бывают чаи?"
+                    <Navigation navNameClass="articles" listNameClass="list" title="Содержание статьи"
+                                listItem1="Какие бывают чаи?"
                                 listItem2="Истинный чай: напитки из чайного листа"
                                 listItem3="Не-чай: разновидности напитка на другой основе"
                                 listItem4="Откуда привозят королевский напиток?"></Navigation>
                 </aside>
 
+                <div className="main">
+                    <div className="teaCards">
+                        <Content picture="https://content3.flowwow-images.com/data/blog/76/1682237959_41552876.png"
+                                 pictureDescription="Ройбуш" cardName="Ройбуш"/>
+                        <Content picture="https://content2.flowwow-images.com/data/blog/01/1682237993_1916201.png"
+                                 pictureDescription="Мате" cardName="Мате"/>
+                        <Content picture="https://content3.flowwow-images.com/data/blog/35/1682238048_96588435.png"
+                                 pictureDescription="Каркаде" cardName="Каркаде"/>
+                        <Content picture="https://content3.flowwow-images.com/data/blog/79/1682238077_10795279.png"
+                                 pictureDescription="Травяный чай" cardName="Травяные"/>
+                        <Content picture="https://content3.flowwow-images.com/data/blog/06/1682238114_30260706.png"
+                                 pictureDescription="Имбирный чай" cardName="Имбирные"/>
+                        <Content picture="https://content3.flowwow-images.com/data/blog/80/1682238204_13198080.png"
+                                 pictureDescription="Гречишный чай" cardName="Гречишные"/>
+                    </div>
+                </div>
             </div>
 
+            <footer className="footer">
+                <Footer address="Инфориация взято из сайта Flowwow" addressLink="https://flowwow.com/blog/vidy-i-sorta-chaya/"></Footer>
+            </footer>
         </div>
     );
 
