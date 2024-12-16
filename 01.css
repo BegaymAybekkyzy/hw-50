@@ -1,0 +1,51 @@
+body {
+    background: #f68282;
+    color: #fff;
+}
+
+.container {
+    margin: 100px auto;
+    max-width: 1210px;
+}
+
+.movies {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 320px 320px 320px;
+    gap: 20px;
+}
+
+.outerShell {
+    position: relative;
+    text-align: center;
+}
+
+.hatIcon {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80px;
+    z-index: 1;
+}
+
+.movieCard {
+    border: 1px solid #fcfcfc;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f09b9b;
+    height: 600px;
+}
+
+.movieImg {
+    max-width: 300px;
+}
+
+.movieImg img {
+    display: block;
+    width:100%;
+}
+
+.movieInfo p {
+    font-size: 20px;
+}
