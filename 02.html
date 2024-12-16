@@ -3,8 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="02.css">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
+    <div id="app"></div>
 
+<script type="text/babel">
+    const app = document.getElementById('app');
+
+    const Header = ({logo, logoDescription}) => {
+        return (
+            <div>
+                <a href="#" className="logo">
+                    <img src={logo} alt={logoDescription}/>
+                </a>
+            </div>
+        );
+    };
+
+    const Content = ({picture, pictureDescription, cardName}) => {
+        return (
+            <div className="cart">
+                <div className="img">
+                    <img src={picture} alt={pictureDescription}/>
+                </div>
+                <div className="cartInfo">
+                    <h5 className="cardTitle">{cardName}</h5>
+                    <a href="#" className="linkArrow">Смотреть</a>
+                </div>
+            </div>
+        );
+    };
+
+    const Navigation = ({navNameClass, listNameClass, title, listItem1, listItem2, listItem3, listItem4}) => {
+        return (
+            <nav className={navNameClass}>
+                <h3>{title}</h3>
+                <ul className={listNameClass}>
+                    <li><a href="#">{listItem1}</a></li>
+                    <li><a href="#">{listItem2}</a></li>
+                    <li><a href="#">{listItem3}</a></li>
+                    <li><a href="#">{listItem4}</a></li>
+                </ul>
+            </nav>
+        );
+    };
+
+    const pageBody = (
+        <div>
+            <header className="header ">
+                <div className="container">
+                    <div className="headerContainer">
+                        <Header logo="https://v.od.ua/uploads/92/logo.png" logoDescription="logo"/>
+                        <Navigation navNameClass="nav-header" listItem1="Рецепты" listItem2="Доставка и оплата"
+                                    listItem3="Отзывы" listItem4="Контакты"></Navigation>
+                    </div>
+                </div>
+
+            </header>
+            <div className="container">
+                <aside className="sidebare">
+                    <Navigation navNameClass="articles" listNameClass="list" title="Содержание статьи" listItem1="Какие бывают чаи?"
+                                listItem2="Истинный чай: напитки из чайного листа"
+                                listItem3="Не-чай: разновидности напитка на другой основе"
+                                listItem4="Откуда привозят королевский напиток?"></Navigation>
+                </aside>
+
+            </div>
+
+        </div>
+    );
+
+    ReactDOM.render(pageBody, app);
+</script>
 </body>
 </html>
