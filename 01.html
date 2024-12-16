@@ -6,11 +6,38 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="01.css">
 </head>
 <body>
   <div id="app" class="container"></div>
 
+  <script type="text/babel">
+      const Movies = ({title, image, yearOfRelease}) => {
+          return (
+              <div className="outerShell">
+                  <img alt="hat icon" src="https://cdn-icons-png.flaticon.com/512/601/601393.png" className="hatIcon"/>
+                  <div className="movieCard">
+                      <div className="movieImg">
+                          <img src={image} alt={title}/>
+                      </div>
+                      <div className="movieInfo">
+                          <h1>{title}</h1>
+                          <p>Год выпуска: {yearOfRelease}</p>
+                      </div>
+                  </div>
+              </div>
+          );
+      };
 
+      const content = (
+          <div className="movies">
+              <Movies title="Искусство катания на лыжах" image="https://m.media-amazon.com/images/M/MV5BYjUyZWUyNTktYmIzYi00ODhkLWFhNWYtM2E0Njk3ZWJkMWZiXkEyXkFqcGc@._V1_.jpg" yearOfRelease={1941}/>
+              <Movies title="Ночь перед Рождеством" image="https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/5b63d02a-7311-4d23-bb3f-ae3b426c4838/300x450" yearOfRelease={1941}/>
+              <Movies title="Гринч" image="https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/e3163c1e-f5cc-431f-b5e6-a9d65ae45b2f/600x900" yearOfRelease={2018}/>
+          </div>
+      );
+
+      ReactDOM.render(content, document.getElementById('app'))
+  </script>
 </body>
 </html>
